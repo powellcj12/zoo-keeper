@@ -11,7 +11,7 @@ class animal
 public:
 	animal(ifstream &file);
 	float getAttribute(int num);
-	float distance(animal* other);
+	static float distance(animal* a, animal* b);
 
 private:
 	string name;
@@ -24,7 +24,14 @@ public:
 	AnimalSet();
 	AnimalSet(animal* a);
 
+	void addAnimal(animal* a);
+	static AnimalSet* unionSets(AnimalSet* a, AnimalSet* b);
+	static float distance(int metric, AnimalSet* a, AnimalSet* b);
 
 private:
 	vector<animal *> animals;
+
+	static float minDistance(AnimalSet* a, AnimalSet* b);
+	static float maxDistance(AnimalSet* a, AnimalSet* b);
+	static float avgDistance(AnimalSet* a, AnimalSet* b);
 };
