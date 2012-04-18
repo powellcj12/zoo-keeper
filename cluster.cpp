@@ -23,7 +23,7 @@ void cluster::init(char* filename)
 	}
 }
 
-void cluster::performClustering(int maxClusters)
+void cluster::performClustering(int metric, int maxClusters)
 {
-
+	
 }
