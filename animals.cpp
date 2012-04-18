@@ -32,6 +32,10 @@ float animal::distance(animal* a, animal* b)
 	return pow(sum, (float)0.5); //Cast to avoid warnings
 }
 
+AnimalSet::AnimalSet()
+{
+}
+
 AnimalSet::AnimalSet(animal* a)
 {
 	addAnimal(a);
@@ -57,7 +61,15 @@ animal* AnimalSet::animalAtIndex(int index)
 
 AnimalSet* AnimalSet::unionSets(AnimalSet* a, AnimalSet* b)
 {
+	AnimalSet* newSet = new AnimalSet();
 
+	for(int i = 0; i < a -> setSize(); i++)
+		newSet -> addAnimal(a -> animalAtIndex(i));
+
+	for(int i = 0; i < b -> setSize(); i++)
+		newSet -> addAnimal(b -> animalAtIndex(i));
+
+	return newSet;
 }
 
 float AnimalSet::distance(int metric, AnimalSet* a, AnimalSet* b)
