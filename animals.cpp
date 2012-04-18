@@ -72,21 +72,6 @@ AnimalSet* AnimalSet::unionSets(AnimalSet* a, AnimalSet* b)
 	return newSet;
 }
 
-float AnimalSet::distance(int metric, AnimalSet* a, AnimalSet* b)
-{
-	switch(metric)
-	{
-		case 1:
-			return minDistance(a,b);
-			break;
-		case 2:
-			return maxDistance(a,b);
-			break;
-		default:
-			return avgDistance(a,b);
-	}
-}
-
 float AnimalSet::minDistance(AnimalSet* a, AnimalSet* b)
 {
 	float dist = FLT_MAX;

@@ -29,12 +29,10 @@ public:
 	int setSize();
 	animal* animalAtIndex(int index);
 	static AnimalSet* unionSets(AnimalSet* a, AnimalSet* b);
-	static float distance(int metric, AnimalSet* a, AnimalSet* b);
-
-private:
-	vector<animal *> animals;
-
 	static float minDistance(AnimalSet* a, AnimalSet* b);
 	static float maxDistance(AnimalSet* a, AnimalSet* b);
 	static float avgDistance(AnimalSet* a, AnimalSet* b);
+
+private:
+	vector<animal *> animals;
 };
