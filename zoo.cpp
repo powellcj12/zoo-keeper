@@ -14,6 +14,7 @@ int main(int argc, char** argv)
 	{
 		cluster* c = new cluster(argv[1]);
 		c -> performClustering(atoi(argv[2]), atoi(argv[3]));
+		c -> print();
 	}
 
 	return 0;

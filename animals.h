@@ -2,6 +2,7 @@
 #include <vector>
 #include <cmath>
 #include <cfloat>
+#include <iostream>
 
 using namespace std;
 
@@ -12,6 +13,8 @@ class animal
 public:
 	animal(ifstream &file);
 	float getAttribute(int num);
+	string getName();
+
 	static float distance(animal* a, animal* b);
 
 private:
@@ -28,6 +31,8 @@ public:
 	void addAnimal(animal* a);
 	int setSize();
 	animal* animalAtIndex(int index);
+	void print();
+
 	static AnimalSet* unionSets(AnimalSet* a, AnimalSet* b);
 	static float minDistance(AnimalSet* a, AnimalSet* b);
 	static float maxDistance(AnimalSet* a, AnimalSet* b);

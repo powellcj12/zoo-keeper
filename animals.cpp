@@ -22,6 +22,11 @@ float animal::getAttribute(int num)
 		return 0.0;
 }
 
+string animal::getName()
+{
+	return name;
+}
+
 float animal::distance(animal* a, animal* b)
 {
 	float sum = 0.0;
@@ -57,6 +62,12 @@ animal* AnimalSet::animalAtIndex(int index)
 		return animals[index];
 	else
 		return NULL;
+}
+
+void AnimalSet::print()
+{
+	for(unsigned long i = 0; i < animals.size(); i++)
+		cout << animals[i] -> getName() << endl;
 }
 
 AnimalSet* AnimalSet::unionSets(AnimalSet* a, AnimalSet* b)
