@@ -1,6 +1,7 @@
 #include <fstream>
 #include <vector>
 #include <cmath>
+#include <cfloat>
 
 using namespace std;
 
@@ -25,6 +26,8 @@ public:
 	AnimalSet(animal* a);
 
 	void addAnimal(animal* a);
+	int setSize();
+	animal* animalAtIndex(int index);
 	static AnimalSet* unionSets(AnimalSet* a, AnimalSet* b);
 	static float distance(int metric, AnimalSet* a, AnimalSet* b);
 

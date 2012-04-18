@@ -42,6 +42,19 @@ void AnimalSet::addAnimal(animal* a)
 	animals.push_back(a);
 }
 
+int AnimalSet::setSize()
+{
+	return (int)animals.size();
+}
+
+animal* AnimalSet::animalAtIndex(int index)
+{
+	if(index >= 0 && index < (int)animals.size())
+		return animals[index];
+	else
+		return NULL;
+}
+
 AnimalSet* AnimalSet::unionSets(AnimalSet* a, AnimalSet* b)
 {
 
@@ -64,15 +77,53 @@ float AnimalSet::distance(int metric, AnimalSet* a, AnimalSet* b)
 
 float AnimalSet::minDistance(AnimalSet* a, AnimalSet* b)
 {
+	float dist = FLT_MAX;
 
+	for(int i = 0; i < a -> setSize(); i++)
+	{
+		for(int j = 0; j < b -> setSize(); j++)
+		{
+			float distTest = animal::distance(a -> animalAtIndex(i), b -> animalAtIndex(j));
+
+			if(distTest < dist)
+				dist = distTest;
+		}
+	}
+
+	return dist;
 }
 
 float AnimalSet::maxDistance(AnimalSet* a, AnimalSet* b)
 {
+	float dist = FLT_MIN;
 
+	for(int i = 0; i < a -> setSize(); i++)
+	{
+		for(int j = 0; j < b -> setSize(); j++)
+		{
+			float distTest = animal::distance(a -> animalAtIndex(i), b -> animalAtIndex(j));
+
+			if(distTest > dist)
+				dist = distTest;
+		}
+	}
+
+	return dist;
 }
 
 float AnimalSet::avgDistance(AnimalSet* a, AnimalSet* b)
 {
+	float dist = 0.0;
+	int numAnimals = 0;
 
+	for(int i = 0; i < a -> setSize(); i++)
+	{
+		for(int j = 0; j < b -> setSize(); j++)
+		{
+			dist += animal::distance(a -> animalAtIndex(i), b -> animalAtIndex(j));
+			numAnimals++;
+		}
+	}
+
+	return dist/numAnimals;
 }
