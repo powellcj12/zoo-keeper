@@ -1,5 +1,5 @@
 #include <iostream>
-#include "animals.h"
+#include "cluster.h"
 
 using namespace std;
 
