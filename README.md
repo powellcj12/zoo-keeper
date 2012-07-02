@@ -1,11 +1,11 @@
-# Zoo Keeper
+# zoo-keeper
 
 ## Introduction
 Clusters animals together based on a variety of their characteristics using a metric specified by the user upon execution.
 
 ## Usage
 	make
-	./zoo *data_file* *metric* *number_of_clusters*
+	./zoo data_file metric number_of_clusters
 
 ## Execution
 ### data_file
@@ -43,9 +43,11 @@ Here is an excerpt from the sample data file provided in the repository:
 ### metric
 The user is required to specify how to determine "closeness" of animals to cluster. An n-dimensional distance algorithm is implemented, but there are a variety of ways on how to use this result to cluster animals. Metric is specified as follows:
 
-	1 - **minimum**: distance between two sets is the distance between the two closets elements
-	2 - **maximum**: distance between two sets is the distance between the two farthest elements
-	3 - **average**: the distance between two sets is the average distance between all pairs of items in the two sets
+1 - *minimum*: distance between two sets is the distance between the two closets elements
+
+2 - *maximum*: distance between two sets is the distance between the two farthest elements
+
+3 - *average*: the distance between two sets is the average distance between all pairs of items in the two sets\n
 
 ### number_of_clusters
 Lastly, the user must identify how many clusters the animals should end up in.
